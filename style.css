@@ -37,9 +37,15 @@ body {
 /* ====================================================== */
 /* circle-spinner animations */
 /* ====================================================== */
+.circle-spinner-container {
+    position: relative;
+    width: 60px;
+    aspect-ratio: 1;
+}
+
 .circle-spinner {
     position: relative;
-    width: 75%;
+    width: 100%;
     aspect-ratio: 1;
     background-color: #000000;
     filter: blur(2px) contrast(6);
@@ -174,6 +180,54 @@ body {
 }
 
 /* ====================================================== */
+/* circles-pase-stretch animations */
+/* ====================================================== */
+.circles-pase-stretch {
+    position: relative;
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.circles-pase-stretch .circle {
+    position: absolute;
+    border-radius: 10px;
+    animation: circles-pase-stretch 1900ms ease-in-out infinite;
+}
+
+.circles-pase-stretch .circle:nth-of-type(1) {
+    left: 0;
+    animation-delay: 0ms;
+}
+
+.circles-pase-stretch .circle:nth-of-type(2) {
+    left: 14px;
+    animation-delay: 120ms;
+}
+
+.circles-pase-stretch .circle:nth-of-type(3) {
+    right: 13px;
+    animation-delay: 260ms;
+}
+
+.circles-pase-stretch .circle:nth-of-type(4) {
+    right: 0;
+    animation-delay: 380ms;
+}
+
+@keyframes circles-pase-stretch {
+    0% {top: 0%; bottom: unset; height: 8px;}
+    25% {top: 0%; height: 8px;}
+    30% {height: 25px;}
+    50% {top: calc(100% - 8px); bottom: unset; height: 8px;}
+    51% {top: unset; bottom: 0%; height: 8px;}
+    75% {bottom: 0%; height: 8px;}
+    80% {height: 25px;}
+    98% {bottom: calc(100% - 8px); height: 8px;}
+    99% {top: unset; bottom: calc(100% - 8px); height: 8px;}
+    100% {top: 0%; bottom: unset; height: 8px;}
+}
+
+/* ====================================================== */
 /* circles-stretching animations */
 /* ====================================================== */
 .circles-stretching {
@@ -185,7 +239,7 @@ body {
 .circles-stretching .circle {
     position: absolute;
     border-radius: 10px;
-    animation: circles-stretching 1900ms ease-in-out infinite;
+    animation: circles-stretching2 1800ms ease-in-out infinite;
 }
 
 .circles-stretching .circle:nth-of-type(1) {
@@ -200,24 +254,123 @@ body {
 
 .circles-stretching .circle:nth-of-type(3) {
     right: 13px;
-    animation-delay: 260ms;
+    animation-delay: 240ms;
 }
 
 .circles-stretching .circle:nth-of-type(4) {
     right: 0;
-    animation-delay: 380ms;
+    animation-delay: 360ms;
 }
 
-/* ! start here *********************** */
-@keyframes circles-stretching {
+@keyframes circles-stretching2 {
     0% {top: 0%; bottom: unset; height: 8px;}
-    25% {top: 0%; height: 8px;}
-    30% {height: 25px;}
+    7% {top: 0%; height: 8px;}
+    20% {height: 25px;}
     50% {top: calc(100% - 8px); bottom: unset; height: 8px;}
     51% {top: unset; bottom: 0%; height: 8px;}
-    75% {bottom: 0%; height: 8px;}
-    80% {height: 25px;}
-    98% {bottom: calc(100% - 8px); height: 8px;}
+    57% {bottom: 0%; height: 8px;}
+    70% {height: 25px;}
     99% {top: unset; bottom: calc(100% - 8px); height: 8px;}
     100% {top: 0%; bottom: unset; height: 8px;}
+}
+
+/* ====================================================== */
+/* circles-stretching2 animations */
+/* ====================================================== */
+.circles-stretching2 {
+    position: relative;
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.circles-stretching2 .circle {
+    position: absolute;
+    border-radius: 10px;
+    animation: circles-stretching2 1500ms ease-in-out infinite;
+}
+
+.circles-stretching2 .circle:nth-of-type(1) {
+    left: 0;
+    animation-delay: 0ms;
+}
+
+.circles-stretching2 .circle:nth-of-type(2) {
+    left: 14px;
+    animation-delay: 120ms;
+}
+
+.circles-stretching2 .circle:nth-of-type(3) {
+    right: 13px;
+    animation-delay: 240ms;
+}
+
+.circles-stretching2 .circle:nth-of-type(4) {
+    right: 0;
+    animation-delay: 360ms;
+}
+
+@keyframes circles-stretching2 {
+    0% {top: 0%; bottom: unset; height: 8px;}
+    6% {top: 0%; height: 8px;}
+    20% {height: 20px;}
+    51% {top: calc(100% - 8px); bottom: unset; height: 8px;}
+    52% {top: unset; bottom: 0%; height: 8px;}
+    55% {bottom: 0%; height: 8px;}
+    70% {height: 20px;}
+    99% {top: unset; bottom: calc(100% - 8px); height: 8px;}
+    100% {top: 0%; bottom: unset; height: 8px;}
+}
+
+/* ====================================================== */
+/* circles-stretching3 animations */
+/* ====================================================== */
+/* set pixel var */
+:root {
+    --circle-size: 8px; /* ! start here ********************************* */
+}
+
+.circles-stretching3 {
+    position: relative;
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.circles-stretching3 .circle {
+    position: absolute;
+    border-radius: 10px;
+    width: var(--circle-size);
+    /* animation: circles-stretching3 1700ms cubic-bezier(0, 0.62, 0.57, 1.56) infinite; */
+    animation: circles-stretching3 1700ms cubic-bezier(0, 0, 0.31, 1.18) infinite;
+}
+
+.circles-stretching3 .circle:nth-of-type(1) {
+    left: 0;
+    animation-delay: 0ms;
+}
+
+.circles-stretching3 .circle:nth-of-type(2) {
+    left: 14px;
+    animation-delay: 120ms;
+}
+
+.circles-stretching3 .circle:nth-of-type(3) {
+    right: 13px;
+    animation-delay: 240ms;
+}
+
+.circles-stretching3 .circle:nth-of-type(4) {
+    right: 0;
+    animation-delay: 360ms;
+}
+
+@keyframes circles-stretching3 {
+    0% {top: 0%; bottom: unset; height: var(--circle-size);}
+    6% {top: 0%; height: var(--circle-size);}
+    20% {height: 20px;}
+    51% {top: calc(100% - var(--circle-size)); bottom: unset; height: var(--circle-size);}
+    52% {top: unset; bottom: 0%; height: var(--circle-size);}
+    55% {bottom: 0%; height: var(--circle-size);}
+    70% {height: 20px;}
+    99% {top: unset; bottom: calc(100% - var(--circle-size)); height: var(--circle-size);}
+    100% {top: 0%; bottom: unset; height: var(--circle-size);}
 }
